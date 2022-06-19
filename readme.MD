@@ -87,7 +87,7 @@ Para descobrir o comando de Django que executa e inicializa o projeto, escrevemo
     
 Para criar o primeiro projeto (módulo) devemos inciar o comando abaixo:
 
-        python manage.py startapp ESP
+        python manage.py startapp Device
 
 O resultado do seu ambiente configurado deve ser :
 

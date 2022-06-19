@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class EspConfig(AppConfig):
+class DatalogConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ESP'
+    name = 'DataLog'
