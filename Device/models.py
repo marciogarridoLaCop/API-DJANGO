@@ -2,7 +2,9 @@ from django.db import models
 
 class Tipo(models.Model):
     nome = models.CharField(max_length=30,blank=False, null=False, verbose_name='Tipo do sensor')
-
+    class Meta:
+       ordering = ['nome']
+    
     def __str__(self):
         return self.nome
 
@@ -12,6 +14,9 @@ class Sensor(models.Model):
     local = models.CharField(max_length=11 ,blank=False, null= False, verbose_name = 'Local de Instalação')
     macaddress = models.CharField(max_length=11 ,null=False,verbose_name = 'Endereço MAC')
     data_cadastro = models.DateField()
+
+    class Meta:
+       ordering = ['data_cadastro']
 
     def __str__(self):
         return self.sensor
