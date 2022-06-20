@@ -12,3 +12,4 @@ class Registro(models.Model):
     pressao = models.CharField(max_length=11,blank=False, null=False,verbose_name = 'Pressão')
     data_registro = models.DateTimeField(auto_now=True,verbose_name='Data do registro') 
   
+    
