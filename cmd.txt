@@ -23,3 +23,11 @@ heroku run python manage.py migrate
 
 ## criar usuários
 heroku run python manage.py createsuperuser
+
+
+## salvar alteracoes e subir 
+
+git add .
+git commit -m "menssagem"
+git push heroku main
+
