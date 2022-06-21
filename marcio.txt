@@ -1,0 +1,2 @@
+heroku repo:purge_cache -a appname
+heroku repo:reset -a appname
