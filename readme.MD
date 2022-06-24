@@ -74,7 +74,7 @@ https://www.django-rest-framework.org
 
 # Instalando suporte a banco de PostgreSQL
 
-O banco de dados utilizado nesse projeto é o banco relacional PostgreSQL.
+O banco de dados utilizado nesse projeto é o banco relacional PostgreSQL.exit
 
         pip install psycopg2
 
