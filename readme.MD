@@ -92,3 +92,24 @@ Para criar o primeiro projeto (módulo) devemos inciar o comando abaixo:
 O resultado do seu ambiente configurado deve ser :
 
 ![Screenshot](img/ambiente.png)
+
+Subindo projeto para o Heroku
+
+## Criar arquivo de dependencias 
+
+        pip3 freeze > requirements.txt
+
+## Salvar e subir
+
+        heroku buildpacks:set heroku/python
+        git add .
+        git commit -m "add requirements.txt"
+        git push heroku main
+
+## Atualizar tabelas no Heroku
+
+        heroku run python manage.py migrate
+
+## Criar super usuários
+
+        heroku run python manage.py createsuperuser
