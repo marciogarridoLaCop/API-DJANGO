@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path,include
-from DataLog.views import RegistroViewSet
+from DataLogSensor.views import RegistroViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('DataLog', RegistroViewSet, basename='Registro')
+router.register('DataLogSensor', RegistroViewSet, basename='Registro')
 
 
 urlpatterns = [

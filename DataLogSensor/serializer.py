@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from DataLog.models import Registro
-from DataLog.validators import *
+from DataLogSensor.models import Registro
+from DataLogSensor.validators import *
 
 class RegistroSerializer(serializers.ModelSerializer):
     class Meta:

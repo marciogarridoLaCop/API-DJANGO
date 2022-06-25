@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DatalogConfig(AppConfig):
+class DatalogsensorConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'DataLog'
+    name = 'DataLogSensor'
