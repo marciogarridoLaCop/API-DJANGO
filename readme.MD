@@ -99,6 +99,9 @@ Subindo projeto para o Heroku
 
         pip3 freeze > requirements.txt
 
+## Definindo respositório remoto 
+
+        heroku git:remote -a api-esp  
 ## Salvar e subir
 
         heroku buildpacks:set heroku/python

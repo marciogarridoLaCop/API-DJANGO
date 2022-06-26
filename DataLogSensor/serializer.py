@@ -2,10 +2,17 @@ from rest_framework import serializers
 from DataLogSensor.models import Registro
 from DataLogSensor.validators import *
 
+
+class ListaRegistroSerializer(serializers.ModelSerializer):
+    sensor = serializers.ReadOnlyField(source='sensor.sensor')
+    class Meta:
+        model = Registro
+        fields = ['sensor_sensor']
+
 class RegistroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registro
-        fields = ['id', 'sensor', 'temperatura', 'pressao','altitude','pressa_nivel_mar','altitude_real']
+        fields = ['id', 'sensor', 'temperatura', 'pressao','altitude','pressa_nivel_mar','altitude_real','data_registro']
         
     def validate(self, data):
         if temperarura_valida(data['temperatura']):

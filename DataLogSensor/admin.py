@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from DataLogSensor.models import Registro
 
 class Dados(admin.ModelAdmin):
