@@ -1,6 +1,7 @@
 from rest_framework import viewsets,generics
 from DataLogSensor.models import Registro
-from DataLogSensor.serializer import RegistroSerializer,ListaRegistroSerializer
+from Device.models import Tipo,Sensor
+from DataLogSensor.serializer import RegistroSerializer, VisualizarRegistroSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -13,11 +14,12 @@ class RegistroViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
-class ListaRegistroSensor(generics.ListAPIView):
-    """Listando as matrículas de um aluno ou aluna"""
+
+class ListaRegistro(generics.ListAPIView):
+    """Listando os sensores"""
     def get_queryset(self):
         queryset = Registro.objects.filter(sensor_id=self.kwargs['pk'])
         return queryset
-    serializer_class = ListaRegistroSerializer
+    serializer_class = VisualizarRegistroSerializer
     authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]    

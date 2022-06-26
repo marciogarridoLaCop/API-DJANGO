@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from Device.models import Tipo,Sensor
-from Device.serializer import TipoSerializer,SensorSerializer 
+from Device.serializer import TipoSerializer,SensorSerializer
 
 
 class TipoViewSet(viewsets.ModelViewSet):

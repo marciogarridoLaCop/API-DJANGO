@@ -1,15 +1,29 @@
 from rest_framework import serializers
 from DataLogSensor.models import Registro
+from Device.models import Tipo,Sensor
 from DataLogSensor.validators import *
 
 
-class ListaRegistroSerializer(serializers.ModelSerializer):
+class TipoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tipo
+        fields = '__all__'
+
+
+class SensorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sensor
+        fields = '__all__'
+
+class VisualizarRegistroSerializer(serializers.ModelSerializer):
+
     sensor = serializers.ReadOnlyField(source='sensor.sensor')
     class Meta:
         model = Registro
-        fields = ['sensor_sensor']
+        fields = ['id', 'sensor', 'temperatura', 'pressao','altitude','pressa_nivel_mar','altitude_real','data_registro']
 
 class RegistroSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Registro
         fields = ['id', 'sensor', 'temperatura', 'pressao','altitude','pressa_nivel_mar','altitude_real','data_registro']
