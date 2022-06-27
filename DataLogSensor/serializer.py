@@ -2,6 +2,14 @@ from rest_framework import serializers
 from DataLogSensor.models import Registro
 from Device.models import Tipo,Sensor
 from DataLogSensor.validators import *
+from django_filters import rest_framework as filters
+
+class RegistroFilter(filters.FilterSet):
+    inicio = filters.DateFilter(field_name="data_registro", lookup_expr="gte")
+    fim = filters.DateFilter(field_name="data_registro", lookup_expr="lte")
+    class Meta:
+        model = Registro
+        fields = ['sensor',]
 
 
 class TipoSerializer(serializers.ModelSerializer):
