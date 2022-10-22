@@ -93,26 +93,23 @@ O resultado do seu ambiente configurado deve ser :
 
 ![Screenshot](img/ambiente.png)
 
-Subindo projeto para o Heroku
+Subindo projeto
+
+## Atualizar tabelas
+
+        python manage.py makemigrations 
+        python manage.py migrate
+
+## Criar super usuários
+
+       python manage.py createsuperuser
 
 ## Criar arquivo de dependencias 
 
         pip3 freeze > requirements.txt
 
-## Definindo respositório remoto 
-
-        heroku git:remote -a api-esp  
-## Salvar e subir
-
-        heroku buildpacks:set heroku/python
         git add .
         git commit -m "add requirements.txt"
-        git push heroku main
+        git push
 
-## Atualizar tabelas no Heroku
 
-        heroku run python manage.py migrate
-
-## Criar super usuários
-
-        heroku run python manage.py createsuperuser

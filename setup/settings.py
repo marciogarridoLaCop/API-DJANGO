@@ -77,15 +77,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'setup.wsgi.application'
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+from dotenv import load_dotenv
+load_dotenv()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mtljbq_esp',
-        'USER': 'mtljbq_esp',
-        'PASSWORD': '@OVO_ovo',
-        'HOST': 'postgres-ag-br1-3.conteige.cloud',
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USERBANCO'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'),
         'PORT':'54149'
     }
 }
