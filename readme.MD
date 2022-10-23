@@ -72,11 +72,11 @@ Para seja possível consumir a API se faz necessário ter o framework REST.
 ### A documentacão Django REST Framework pode ser consultada em :
 https://www.django-rest-framework.org
 
-# Instalando suporte a banco de PostgreSQL
+# Instalando suporte a banco de MySQL
 
-O banco de dados utilizado nesse projeto é o banco relacional PostgreSQL.exit
+O banco de dados utilizado nesse projeto é o banco relacional MySql
 
-        pip install psycopg2
+        pip install mysqlclient
 
 # Configurando o projeto e criando o APP API 
 
@@ -94,6 +94,18 @@ O resultado do seu ambiente configurado deve ser :
 ![Screenshot](img/ambiente.png)
 
 Subindo projeto
+
+
+## Configure as credenciais do projeto no arquivo .env
+
+Como o projeto foi feito usando variaveis de ambiente, basta configurar o arquivo .env para que settings.py possa ler as variaveis e autenticar.
+Crie um arquivo .env na raiz do seu projeto dentro dele preencha esses campos com as devidas informações:
+
+        NAME_= nome do banco de dados
+        USER_= login
+        PASSWORD_= senha
+        HOST= endereco do servidor
+        PORT_= porta
 
 ## Atualizar tabelas
 
