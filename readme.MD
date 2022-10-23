@@ -99,7 +99,7 @@ Subindo projeto
 ## Configure as credenciais do projeto no arquivo .env
 
 Como o projeto foi feito usando variaveis de ambiente, basta configurar o arquivo .env para que settings.py possa ler as variaveis e autenticar.
-Crie um arquivo .env na raiz do seu projeto dentro dele preencha esses campos com as devidas informações:
+Crie um arquivo ".env" na raiz do seu projeto dentro dele preencha esses campos com as devidas informações:
 
         NAME_= nome do banco de dados
         USER_= login
