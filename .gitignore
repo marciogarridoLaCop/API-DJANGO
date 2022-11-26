@@ -1,2 +1,6 @@
 #Ignora arquivos de credenciais
 .env
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
