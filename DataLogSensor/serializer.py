@@ -38,7 +38,7 @@ class RegistroSerializer(serializers.ModelSerializer):
         
     def validate(self, data):
         if temperarura_valida(data['temperatura']):
-            raise serializers.ValidationError({'temperatura':"A temperatura precisa ter um valor numérico"})
+            raise serializers.ValidationError({'temperatura':"A temperatura precisa ter um valor numérico a"})
         if not temperarura_tamanho(data['temperatura']):
             raise serializers.ValidationError({'temperatura':"A temperatura precisa ter um valor no máximo 5 dígitos"})
         if precipitacao_valida(data['precipitacao']):
