@@ -30,4 +30,3 @@ class ListaRegistro(generics.ListAPIView):
     filterset_class = RegistroFilter
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]    
-    list_per_page = 1000
