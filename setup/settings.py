@@ -132,6 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## Número de registros exibidos pela API 
 
-
+DATA_UPLOAD_MAX_NUMBER_FIELDS = None
 
 django_heroku.settings(locals())
