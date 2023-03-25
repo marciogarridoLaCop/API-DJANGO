@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 router.register('tipo', TipoViewSet, basename='Tipo')
 router.register('sensor', SensorViewSet, basename='Sensor')
 router.register('datalogsensor', RegistroViewSet, basename='Registro')
+router.register('sensorespecifico/<int:pk>/', ListaRegistro.as_view())
                          
 
 
