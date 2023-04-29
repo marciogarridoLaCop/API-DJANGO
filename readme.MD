@@ -26,19 +26,18 @@ Para garantirmos que a versão do seu projeto não conflite com outros apps, o r
 Para criar, há a parte "Creating virtual environments". Para organizar o projeto, crie um diretório e em sequencia vá para o local criado.
 
 
-        mkdir -p ~/Users/marciogarrido/API-ESP
-        cd ~/Users/marciogarrido/API-ESP
+        mkdir -p ~/Users/marciogarrido/api-esp-2-aws
+        cd ~/Users/marciogarrido/api-esp-2-aws
 
 Com local já identificado, o próximo passo é virtualizar o ambiente de desenvolimento venv
 
-        python3 -m venv ./venv
+        python3 -m venv ~/eb-virt
 
 No decorrer da aplicação, editamos e alteramos o código usando o Visual Studio Code, mas outros editores como PyCharm, Sublime Text ou Atom também são eficientes. 
 
 Abrindo-o, acessamos a pasta "aplicacao > venv" e abrimos o terminal com "Command + J". Na janela "Terminal", precisamos carregar o ambiente virtual digitando pwd para copiar e colar o caminho após escrever source na linha seguinte. 
 
-        pwd
-        /Users/marciogarrido/API-ESP
+        source ~/eb-virt/bin/activate
 
 No meu caso, o retorno do comando pwd foi o meu perfil, que vai variar de acordo com as suas credenciais. Com seu perfil identificado, o próximo passo é criar de fato o ambiente. Escrevemos /venv/bin/activate na sequência do caminho para acessar a pasta e inicializar com "Enter". Temos confirmação quando aparece (venv) antes do diretório.
 
@@ -46,74 +45,57 @@ No meu caso, o retorno do comando pwd foi o meu perfil, que vai variar de acordo
 
 Para validar se o processo foi concluído com sucesso, seu terminal agora deve ter o nome venv no início do texto como abaixo:
 
-        (venv) (base) [API-ESP]  
+        (eb-virt) (base) [api-esp-2-aws]  
 
-
-# Instalando Django
+# Instalando as dependências 
 Abra seu terminal e digite a instrução abaixo:
 
-        pip install Django==4.0.5
+        pip install - r requirements.txt
 
-Para verificação se o Djanjo foi instalado, execute o comando abaixo para ver as versões do seu ambiente
+Para verificação se o Djanjo e suas dependências foram instaladas com exito, execute o comando abaixo para ver as versões do seu ambiente
 
-        pip pip freeze
+        pip freeze
     
-O resultado deve retornar os modelos abaixo:
+O resultado deve retornar os móodulos abaixo:
 
         asgiref==3.5.2
-        Django==4.0.5
-        sqlparse==0.4.2
-# Instalando Django REST Framework 
-Para seja possível consumir a API se faz necessário ter o framework REST.
-
-        pip install djangorestframework
-        pip install markdown       
-        pip install django-filter 
-
-### A documentacão Django REST Framework pode ser consultada em :
-https://www.django-rest-framework.org
+        Django==3.2.16
+        django-filter==22.1
+        djangorestframework==3.14.0
+        importlib-metadata==5.1.0
+        Markdown==3.4.1
+        pytz==2022.6
+        sqlparse==0.4.3
+        zipp==3.11.0
 
 # Instalando suporte a banco de PostgreSQL
 
-O banco de dados utilizado nesse projeto é o banco relacional PostgreSQL.exit
+O banco de dados utilizado nesse projeto é o banco relacional PostgreSQL
 
         pip install psycopg2
 
-# Configurando o projeto e criando o APP API 
-
-Com nosso ambiente virtual configurado e ativado, podemos dar início ao nosso projeto.
-Para descobrir o comando de Django que executa e inicializa o projeto, escrevemos django-admin help na janela de terminal dentro do Visual Studio para visualizar uma série de comandos que podemos usar; dentre estes, existe o startproject.
-
-        django-admin startproject setup . 
-    
-Para criar o primeiro projeto (módulo) devemos inciar o comando abaixo:
-
-        python manage.py startapp Device
-
-O resultado do seu ambiente configurado deve ser :
-
-![Screenshot](img/ambiente.png)
-
-Subindo projeto para o Heroku
-
 ## Criar arquivo de dependencias 
+Antes de subir o projeto, verifique as dependências e gere o arquivo de instalacão
+
 
         pip3 freeze > requirements.txt
 
-## Definindo respositório remoto 
+## Definindo respositório remoto
 
-        heroku git:remote -a api-esp  
+        eb init -p python-3.8 EB-repo-api
+
+### onde o nome do repositório é "EB-repo-api" usando a versão do Python 3
+
+## Crie um ambiente e implante o aplicativo nele com eb create.
+
+
 ## Salvar e subir
 
-        heroku buildpacks:set heroku/python
-        git add .
-        git commit -m "add requirements.txt"
-        git push heroku main
+        
+## Atualizar tabelas 
 
-## Atualizar tabelas no Heroku
-
-        heroku run python manage.py migrate
+        python manage.py migrate
 
 ## Criar super usuários
 
-        heroku run python manage.py createsuperuser
+        python manage.py createsuperuser
