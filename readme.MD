@@ -5,7 +5,7 @@
 
 [![N|Solid](https://upload.wikimedia.org/wikipedia/pt/thumb/4/47/UFF_bras%C3%A3o.png/200px-UFF_bras%C3%A3o.png)](http://www.ppgeet.uff.br/site/)
 
-## API para consumo de dados de microntroladores ESP
+## API para consumo de dados de microntroladores ESP - Estacao Completa
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ### Documentação Django

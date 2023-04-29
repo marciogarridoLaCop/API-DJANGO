@@ -28,12 +28,12 @@ class VisualizarRegistroSerializer(serializers.ModelSerializer):
     sensor = serializers.ReadOnlyField(source='sensor.sensor')
     class Meta:
         model = Registro
-        fields = ['id', 'sensor', 'temperatura', 'pressao','precipitacao','altitude','pressa_nivel_mar','altitude_real','data_registro']
+        fields = ['id', 'sensor', 'date','time','mm_h','mm_dia','temp','umidade','pressao','vmed','vmax','direcao','uv','w_m2','data_registro']
 
 class RegistroSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Registro
-        fields = ['id', 'sensor', 'temperatura', 'pressao','precipitacao','altitude','pressa_nivel_mar','altitude_real','data_registro']
+        fields = ['id', 'sensor', 'date','time','mm_h','mm_dia','temp','umidade','pressao','vmed','vmax','direcao','uv','w_m2','data_registro']
         
    
