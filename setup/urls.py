@@ -9,10 +9,7 @@ router.register('tipo', TipoViewSet, basename='Tipo')
 router.register('sensor', SensorViewSet, basename='Sensor')
 router.register('datalogsensor', RegistroViewSet, basename='Registro')
 
-                         
-
-
-
+  
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls) ),
